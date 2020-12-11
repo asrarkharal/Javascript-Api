@@ -1,0 +1,173 @@
+iframe {
+  width: 100%;
+  height: 400px;
+}
+
+.container {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "nav nav"
+    "otherThumbs otherThumbs"
+    "main sideTop"
+    "highLights sideBottom";
+  grid-auto-rows: minmax(50px, auto);
+  grid-gap: 20px;
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "nav"
+      "otherThumbs"
+      "main"
+      "sideTop"
+      "sideBottom"
+      "highLights";
+    grid-auto-rows: minmax(50px, auto);
+    grid-gap: 20px;
+  }
+}
+
+.thumbNailBar {
+  grid-area: otherThumbs;
+  /* border: 1px solid rgb(214, 209, 209); */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+
+}
+
+.thumbNailBar div {
+  flex-basis: auto;
+  margin: 5px 0 5px;
+  height: 100px;
+  width: 150px;
+  cursor: pointer;
+
+}
+
+.highLights {
+  grid-area: highLights;
+
+}
+
+main {
+  display: flex;
+  grid-area: main;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.thumbNail {
+  position: relative;
+  width: 300px;
+  min-height: 100px;
+
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+}
+
+nav {
+  grid-area: nav;
+  background-color: lightblue;
+
+}
+
+.navSelection ul {
+  display: inline-block;
+
+}
+
+ul {
+  padding-inline-start: 0;
+}
+
+.navSelection {
+  text-align: center;
+}
+
+.searchSection {
+  margin-right: 10px;
+  padding: 5px 0 5px;
+  text-align: center;
+
+}
+
+.searchSection input {
+  width: 250px;
+  height: 30px;
+}
+
+.searchSection button {
+  height: 36px;
+  width: 80px;
+}
+
+ul li {
+  display: inline-block;
+  border-right: 1px solid black;
+  padding: 0 5px 0 5px;
+  color: rgb(63, 63, 63);
+
+}
+
+li:hover {
+  cursor: pointer;
+  background-color: rgba(82, 63, 63, 0.514);
+  color: white;
+
+}
+
+ul li:last-child {
+  border-style: none;
+}
+
+.competitionBox a {
+  color: brown;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.boxesTeams span {
+  font-style: italic;
+  color: brown;
+}
+
+.highLights h3:hover {
+  cursor: pointer;
+}
+
+.highLights {
+  text-align: center;
+}
+
+.rightSideTop {
+  grid-area: sideTop;
+  /* border: 1px solid lightgray; */
+  text-align: center;
+
+}
+
+.rightSideBottom {
+  grid-area: sideBottom;
+  border: 1px solid lightgray;
+  text-align: center;
+
+
+}
+
+
+h5 {
+  cursor: pointer;
+  color: rgb(236, 72, 86);
+}
